@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdListModule } from '@angular/material';
+import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdListModule, MdRippleModule } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -34,7 +34,8 @@ import { AppEffects } from './effects';
     MdToolbarModule,
     MdSidenavModule,
     MdButtonModule,
-    MdListModule
+    MdListModule,
+    MdRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

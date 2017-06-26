@@ -1,5 +1,12 @@
 <md-sidenav-container>
-  <md-sidenav>
+  <md-sidenav [opened]="true" [mode]="'side'">
+    <md-list [@listAnimation]="(places$ | async) ? 'in' : 'out'">
+      <md-list-item *ngFor="let place of (places$ | async); let i = index" >
+        <!--<button >-->
+        {{ place?.name }}
+        <!--</button>-->
+      </md-list-item>
+    </md-list>
   </md-sidenav>
   <ng-content></ng-content>
 </md-sidenav-container>
