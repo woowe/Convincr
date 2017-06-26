@@ -13,6 +13,7 @@ export class AppEffects {
     .ofType('LOAD_GOOGLE_PLACES')
     .map(toPayload)
     .switchMap( payload => {
+      console.log('load google places!', payload);
       return Observable.of({});
     });
 }
