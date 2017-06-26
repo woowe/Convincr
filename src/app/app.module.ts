@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdToolbarModule } from '@angular/material';
+import { MdToolbarModule, MdSidenavModule, MdButtonModule, MdListModule } from '@angular/material';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -28,10 +28,13 @@ import { AppEffects } from './effects';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     StoreModule.provideStore(mainReducer),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(AppEffects),
-    MdToolbarModule
+    MdToolbarModule,
+    MdSidenavModule,
+    MdButtonModule,
+    MdListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

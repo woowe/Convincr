@@ -3,13 +3,19 @@ import { Action } from '@ngrx/store';
 import { AppState } from '../interfaces/';
 
 export const INITIAL_STATE: AppState = {
-  places: []
+  places: [],
+  geolocation: null,
+  google: null,
 };
 
 export function mainReducer(state: AppState = INITIAL_STATE, action: Action): any {
   switch(action.type) {
     case 'SET_PLACES':
-      return Object.assign({}, state, { places: action.payload })
+      return Object.assign({}, state, { places: action.payload });
+    case 'UPDATE_GEOLOCATION':
+      return Object.assign({}, state, { geolocation: action.payload });
+    case 'GOOGLE_APIS_LOADED':
+      return Object.assign({}, state, { google: action.payload });
     default:
       return state;
   }
