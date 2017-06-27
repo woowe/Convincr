@@ -30,9 +30,9 @@ import { environment } from '../../environments/environment';
   animations: [
     trigger('listAnimation', [
       transition('* => in', [
-        query('md-list-item', style({ opacity: 0, transform: 'translateX(-50%)' }), { optional: true }),
-        query('md-list-item', stagger('50ms', [
-          animate('0.2s ease', style({ opacity: 1, transform: 'translateX(0%)' }))
+        query('md-list-item', style({ opacity: 0, transform: 'translateX(-25px)' }), { optional: true }),
+        query('md-list-item', stagger('50ms ease', [
+          animate('0.2s cubic-bezier(0.19, 1, 0.22, 1)', style({ opacity: 1, transform: 'translateX(0%)' }))
         ]), { optional: true })
       ])
     ])
@@ -56,7 +56,7 @@ export class EventsOverlayComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.store$.dispatch({type: 'UPDATE_NEARBY_PLACES'});
+    this.store$.dispatch({type: 'UPDATE_NEARBY_PLACES', payload: { type: ['restaurant'] }});
 
     this.places$ = this.store$
       .filter((store) => store.places.length > 0)
